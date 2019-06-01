@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page-title %}
+    Dashboard
+{% endblock %}
+
+{% block page-header %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand offset-md-1" href="{% url 'home' %}">
+            <img src="/media/logo/logo_2ngeXMV.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block page-body %}
+    <div class="container mt-2">
+        <h1 class="text-center">WELCOME TO THE DASHBOARD</h1>
+        <br>
+        <div class="row justify-content-around">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a class="btn btn-primary dashboard" href="{% url 'add_event' %}">
+                    <br>
+                    <i class="fas fa-calendar-plus"></i>
+                    <br><strong>ADD AN EVENT</strong>
+                </a>
+                <a class="btn btn-primary dashboard mt-3" href="{% url 'add_notice' %}">
+                    <br>
+                    <i class="fas fa-calendar-plus"></i>
+                    <br><strong>ADD A NOTICE</strong>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a class="btn btn-danger dashboard" href="{% url 'update_event' %}">
+                    <br>
+                    <i class="fas fa-edit"></i> | <i class="fas fa-trash"></i>
+                    <br><strong>UPDATE AN EVENT</strong>
+                </a>
+                <a class="btn btn-danger dashboard mt-3" href="{% url 'update_notice' %}">
+                    <br>
+                    <i class="fas fa-edit"></i> | <i class="fas fa-trash"></i>
+                    <br><strong>UPDATE A NOTICE</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <a class="btn btn-info dashboard" href="{% url 'add_testimonial' %}">
+                    <br>
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <br><strong>ADD TESTIMONIAL</strong>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

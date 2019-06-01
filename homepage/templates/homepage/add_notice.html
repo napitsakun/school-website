@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+    Add Notice
+{% endblock %}
+
+{% block page-header %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand offset-md-1" href="{% url 'home' %}">
+            <img src="/media/logo/logo_2ngeXMV.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-columns"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block page-body %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h2>Add Notice</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Notice Title:</label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" name="notice_title" value="{{ notice_title }}" required autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label text-md-right">Notice Description:</label>
+                                <div class="col-md-7">
+                                    <textarea cols="30" rows="10" class="form-control" name="notice_description" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary"> Add Notice </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+    Logout
+{% endblock %}
+
+{% block page-body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>You are successfully logged out!</h2>
+                <p><a href="{% url 'login' %}">Click Here</a> to login again.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

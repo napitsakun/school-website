@@ -1,0 +1,147 @@
+.navbar-dark .navbar-nav .nav-link {
+	font-size: 20px;
+	color: #fff;
+}
+
+.nav-link {
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+}
+
+.nav-item {
+	margin: 10px;
+}
+
+.unique-color-dark {
+    background-color: #4499ad;
+    color: #fff;
+}
+
+.bg-dark {
+    background-color: #4499ad!important;
+}
+
+a.btn.btn-primary, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: #4499ad;
+    border-color: #4499ad;
+}
+
+button.btn.btn-primary {
+	background-color: #4499ad;
+    border-color: #4499ad;
+	font-size: 18px;
+	color: #fff;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+	box-shadow: none;
+}
+
+a.btn.btn-primary.dashboard {
+	background-color: #4499ad;
+    border-color: #4478ad;
+	font-size: 18px;
+	color: #fff;
+	width: 100%;
+	height: 130px;
+}
+
+a.btn.btn-danger.dashboard {
+	font-size: 18px;
+	color: #fff;
+	width: 100%;
+	height: 130px;
+}
+
+a.btn.btn-info.dashboard {
+	font-size: 18px;
+	color: #fff;
+	width: 100%;
+	height: 130px;
+}
+
+
+a.btn.btn-primary.dashboard:hover  {
+	background-color: #177aa3;
+}
+
+a.btn.btn-danger.dashboard:hover {
+	background-color: #CC170E;
+}
+
+a.goback {
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Sans-Serif;
+	text-decoration: underline;
+}
+
+.page-item.active .page-link {
+	background-color: #4499ad;
+    border-color: #4478ad;
+}
+
+.primary-color {
+	background-color: #4499ad;
+}
+
+.jumbotron {
+	background-color: #4499ad;
+	/*background-image: url("../image/work-731198_1920.jpg");*/
+	opacity: 0.8;
+	margin-bottom: 3px;
+}
+
+.blockquote p, .blockquote footer {
+	color: #fff;
+}
+
+.card.home {
+	transition: .5s;
+}
+
+.card.home:hover {
+	transform: scale(1.05, 1.05);
+}
+
+.fas.fa-book-reader, .fas.fa-futbol, .fas.fa-microphone, .fas.fa-desktop {
+	font-size: 300%;
+	color: #4499ad;
+}
+
+.facility-title, .h1 {
+	color: #4499ad;
+}
+
+.col-lg-3.col-md-3.col-sm-3.text-center {
+	transition: 0.3s;
+	overflow: hidden;
+}
+
+.col-lg-3.col-md-3.col-sm-3.text-center:hover {
+	transform: scale(1.1);
+}
+
+.fas.fa-quote-left, .fas.fa-quote-right {
+	font-size: 30px;
+}
+
+.no-padding {
+	padding-right: 2px;
+	padding-left: 2px;
+	margin-bottom: 0;
+}
+
+label.btn {
+	background-color: #4499ad;
+	color: white;
+	font-size: 18px;
+}
+
+img.card-img {
+	opacity: 0.9;
+}
+
+h1 {
+	color: #4499ad;
+}

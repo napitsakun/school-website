@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}
+    Add event
+{% endblock %}
+
+{% block page-header %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand offset-md-1" href="{% url 'home' %}">
+            <img src="/media/logo/logo_2ngeXMV.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-columns"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block page-body %}
+    <div class="container mt-5">
+    <h1 class="text-center">UPDATE EVENT HERE</h1>
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <table border="1px" cellpadding="10px" cellspacing="10px" class="w-100">
+                {% for event in event_list %}
+                    <tr>
+                        <td><a href="/dashboard/updateevent/event/{{ event.id }}/">{{ event.event_title }}</a></td>
+                        <td><a href="/dashboard/editevent/{{ event.id }}"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="/dashboard/deleteevent/{{ event.id }}/"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page-title %}
+	Notice Board
+{% endblock %}
+
+{% block page-header %}
+	{% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+    <!-- Notices -->
+    <h1 class="text-center">
+    <i class="fas fa-quote-left"></i>
+        NOTICES
+    <i class="fas fa-quote-right"></i>
+    <hr class="mx-auto">
+    </h1>
+	<div class="container">
+        {% for notice in notice_list_filter %}
+		    <div class="row mt-3 justify-content-center">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="card-header"><b>{{ notice.notice_title }}</b>
+                            <small class="float-right">{{ notice.notice_date_time }}</small>
+                        </div>
+                        <div class="card-body text-justify">{{ notice.notice_description }}</div>
+                    </div>
+                </div>
+		    </div>
+        {% endfor %}
+	</div>
+    <!-- Notices -->
+
+
+    <!-- Pagination -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            {% if notice_list_filter.has_other_pages %}
+                <ul class="pagination">
+                    {% if notice_list_filter.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ notice_list_filter.previous_page_number }}"> Previous </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"> Previous </span>
+                        </li>
+                    {% endif %}
+
+                    {% for i in notice_list_filter.paginator.page_range %}
+                        {% if notice_list_filter.number == i %}
+                            <li class="page-item active">
+                                <span class="page-link"> {{ i }} <span class="sr-only">(current)</span></span>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ i }}"> {{ i }} </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if notice_list_filter.has_next %}
+                        <li class="page-item">
+                            <a  class="page-link" href="?page={{ notice_list_filter.next_page_number }}"> Next </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"> Next </span>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Pagination -->
+{% endblock %}
+
+
+{% block page-footer %}
+	{% include 'footer.html' %}
+{% endblock %}

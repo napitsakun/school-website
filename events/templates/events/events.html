@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block page-title %}
+	Events
+{% endblock %}
+
+{% block page-header %}
+	{% include 'header.html' %}
+{% endblock %}
+
+{% block page-body %}
+	<!-- Events -->
+    <h1 class="text-center">
+    <i class="fas fa-quote-left"></i>
+        NEWS & EVENTS
+    <i class="fas fa-quote-right"></i>
+    <hr class="mx-auto">
+    </h1>
+	<div class="container">
+		<div class="row mt-3">
+            {% for event in event_list_filter %}
+			<div class="col-lg-4 col-md-4 col-sm-4 mb-3">
+				<div class="card">
+					<img class="card-img-top" src="{{ event.event_image.url }}" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">{{ event.event_title }}
+                        <br><small>&nbsp; - <i class="fas fa-clock"></i> {{ event.event_date_time }}</small>
+                        </h5>
+						<a href="/events/{{ event.id }}/" class="btn btn-primary">Read more</a>
+					</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+    <!-- Events -->
+
+
+    <!-- Pagination -->
+    <div class="container">
+        <div class="row justify-content-center">
+            {% if event_list_filter.has_other_pages %}
+                <ul class="pagination">
+                    {% if event_list_filter.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ event_list_filter.previous_page_number }}"> Previous </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"> Previous </span>
+                        </li>
+                    {% endif %}
+
+                    {% for i in event_list_filter.paginator.page_range %}
+                      {% if event_list_filter.number == i %}
+                          <li class="page-item active">
+                              <span class="page-link"> {{ i }} <span class="sr-only">(current)</span></span>
+                          </li>
+                      {% else %}
+                          <li class="page-item">
+                              <a class="page-link" href="?page={{ i }}"> {{ i }} </a>
+                          </li>
+                      {% endif %}
+                    {% endfor %}
+
+                    {% if event_list_filter.has_next %}
+                        <li class="page-item">
+                            <a  class="page-link" href="?page={{ event_list_filter.next_page_number }}"> Next </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <span class="page-link"> Next </span>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Pagination -->
+{% endblock %}
+
+
+{% block page-footer %}
+	{% include 'footer.html' %}
+{% endblock %}
