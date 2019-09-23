@@ -1,6 +1,5 @@
 from django import forms
-from events.models import Events
-from notices.models import Notices
+from .models import Events, Notices
 from .models import Testimonial
 
 class EventForm(forms.ModelForm):

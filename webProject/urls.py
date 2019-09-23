@@ -16,9 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 import homepage.home_urls
-import events.events_urls
-import notices.notices_urls
-import aboutus.aboutus_urls
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -27,7 +24,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(homepage.home_urls)),
-    path('events/', include(events.events_urls)),
-    path('notices/', include(notices.notices_urls)),
-    path('aboutus/', include(aboutus.aboutus_urls)),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

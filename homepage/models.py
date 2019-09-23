@@ -28,3 +28,37 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.testimonial_reviewer
+
+
+class Aboutus(models.Model):
+    feature_image = models.FileField(upload_to='about/')
+    about_title = models.CharField(max_length=200)
+    about_description = models.TextField()
+
+    def __str__(self):
+        return self.about_title
+
+
+class Events(models.Model):
+    event_title = models.CharField(max_length=200)
+    event_description = models.TextField(default='')
+    event_image = models.FileField(upload_to='events')
+    event_date_time = models.DateTimeField(auto_now_add=True)
+
+    class Meta():
+        ordering = ['-event_date_time']
+
+    def __str__(self):
+        return self.event_title
+
+
+class Notices(models.Model):
+    notice_title = models.CharField(max_length=200, default='')
+    notice_description = models.TextField(max_length=600, default='')
+    notice_date_time = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering= ['-notice_date_time']
+
+    def __str__(self):
+        return self.notice_title
